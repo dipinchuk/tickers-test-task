@@ -23,16 +23,23 @@ As a bonus some additional functionality can be implemented (please describe imp
 - [x] any additional functionality that might be useful
 
   The following has been added:
-   - [x] sorting by ticker or price
+   - [x] sorting by ticker and price
    - [x] modal to read info about the ticker
    - [x] search by ticker and description
 
-You should use the next technologies:
+Technologies for use:
 - [x] React (preferable with hooks)
 - [x] Redux (with Redux-Thunk or any other Redux middleware you are familiar) or any other state-manager library you want (* Redux middleware will be added soon)
 - [x] Socket.io - to connect to the service
 - [x] any UI library you want, or you can use just pure CSS (* Bulma and SCSS were used)
-- [x] Testing Library 
+- [x] Testing Library (*@testing-library/react)
+
+  The following has been added:
+   - [x] Typescript
+   - [x] ESLint, Prettier
+   - [x] ```@uiball/loaders```
+
+- [x] The app is responsive.
 
 The next parts will be assessed:
 - workability: how your application works
@@ -77,14 +84,14 @@ npm run test:client
 ![zero tickers](https://github.com/dipinchuk/tickers-test-task/blob/main/client/public/screenshots/zero-tickers.png)
 ### Sorted tickers (by price descending)
 ![sorted tickers](https://github.com/dipinchuk/tickers-test-task/blob/main/client/public/screenshots/sorted-tickers.png)
+### Modal
+![modal](https://github.com/dipinchuk/tickers-test-task/blob/main/client/public/screenshots/modal.png)
 ### All search results
 ![](https://github.com/dipinchuk/tickers-test-task/blob/main/client/public/screenshots/all-search-results.png)
 ### Ticker search result
 ![ticker search result](https://github.com/dipinchuk/tickers-test-task/blob/main/client/public/screenshots/ticker-search-results.png)
 ### Zero search results
 ![zero search results](https://github.com/dipinchuk/tickers-test-task/blob/main/client/public/screenshots/zero-search-results.png)
-### Modal
-![modal](https://github.com/dipinchuk/tickers-test-task/blob/main/client/public/screenshots/modal.png)
 ### Not found
 ![not found](https://github.com/dipinchuk/tickers-test-task/blob/main/client/public/screenshots/not-found.png)
 ### Loader
