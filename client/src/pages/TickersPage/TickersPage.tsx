@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAllTickers } from '../../features/tickersSlice';
 import './TickersPage.scss';
@@ -9,9 +9,17 @@ import { useAppSelector } from '../../store/hooks';
 import { TickersMenu } from './components/TickersMenu';
 import { tickers } from '../../store/selectors';
 import { TickersTable } from './components/TickersTable';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { prepareTickers } from '../../utils/tickersHelper';
 import { Loader } from '../../components/Loader';
+import classNames from 'classnames';
+import { getSearchWith } from '../../utils/searchHelper';
+
+const filterOptions = [
+  { title: 'All', value: null },
+  { title: 'Profitable', value: 'profitable' },
+  { title: 'Unprofitable', value: 'unprofitable' },
+];
 
 export const TickersPage: React.FC = () => {
   const selectedTickers = useSelector(
@@ -64,6 +72,7 @@ export const TickersPage: React.FC = () => {
   const [searchParams] = useSearchParams();
   const sort = searchParams.get('sort') || '';
   const order = searchParams.get('order') || '';
+  const filter = searchParams.get('filter') || null;
 
   tickersListToRender = React.useMemo(() => {
     return prepareTickers(tickersListToRender, {
@@ -183,6 +192,26 @@ export const TickersPage: React.FC = () => {
                 </div>
               </div>
             )}
+
+            <div className="column">
+              <p className="panel-tabs" data-cy="SexFilter">
+                {filterOptions.map(option => (
+                  <Link
+                    to={{
+                      search: getSearchWith(searchParams, {
+                        filter: option.value,
+                      }),
+                    }}
+                    key={option.value}
+                    className={classNames({
+                      'is-active': filter === option.value,
+                    })}
+                  >
+                    {option.title}
+                  </Link>
+                ))}
+              </p>
+            </div>
 
             <TickersTable tickers={tickersListToRender} />
           </>

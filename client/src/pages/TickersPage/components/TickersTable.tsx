@@ -1,7 +1,6 @@
 import { Link, useSearchParams } from 'react-router-dom';
 import classnames from 'classnames';
 import { getSearchWith } from '../../../utils/searchHelper';
-
 import { Ticker } from '../../../types/Ticker';
 import { TickerData } from './TickerData';
 
@@ -73,12 +72,7 @@ export const TickersTable: React.FC<Props> = ({ tickers }) => {
             <thead>
               <tr>
                 {sortByParams.map(col => (
-                  <th
-                    key={col.key}
-                    style={{
-                      minWidth: col.title === 'Price' ? '130px' : 'auto',
-                    }}
-                  >
+                  <th key={col.key} style={{ minWidth: '130px' }}>
                     <span
                       className={`is-flex is-flex-wrap-nowrap is-flex-direction-row`}
                     >

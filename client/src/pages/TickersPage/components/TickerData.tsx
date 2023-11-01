@@ -1,3 +1,4 @@
+import { useSearchParams } from 'react-router-dom';
 import { setSelectedTicker } from '../../../features/tickersSlice';
 import { useAppDispatch } from '../../../store/hooks';
 import { Ticker } from '../../../types/Ticker';
@@ -9,8 +10,10 @@ type Props = {
 
 export const TickerData: React.FC<Props> = ({ ticker }) => {
   const dispatch = useAppDispatch();
+  const [searchParams] = useSearchParams();
   const currentPriceRef = useRef<number | null>(null);
   const [priceChange, setPriceChange] = useState<number | null>(null);
+  const filter = searchParams.get('filter') || null;
 
   useEffect(() => {
     if (currentPriceRef.current !== null) {
@@ -20,6 +23,14 @@ export const TickerData: React.FC<Props> = ({ ticker }) => {
     currentPriceRef.current = ticker.price;
   }, [ticker.price]);
 
+  if (priceChange) {
+    if (
+      (filter === 'profitable' && priceChange < 0) ||
+      (filter === 'unprofitable' && priceChange > 0)
+    ) {
+      return <></>;
+    }
+  }
   return (
     <>
       <tr className="tr">
