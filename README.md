@@ -16,28 +16,31 @@ Requirements:
 - [x] application should render price changes for some tickers in real time
 
 As a bonus some additional functionality can be implemented (please describe implemented bonus functionality in this file):
-- [x] any additional visual effects to highlight positive or negative changes in the prices
-- [ ] the possibility to switch on/off tickers by user
-- [x] the possibility to specify interval time by user
-- [x] the possibility to add/remove ticker from watching group
+- [x] any additional visual effects to highlight positive or negative changes in the prices (* the price difference is displayed; green is greater than 0, red is less than 0)
+- [x] the possibility to switch on/off tickers by user (* opportunities to toggle all tickers together or one by one)
+- [x] the possibility to specify interval time by user (* by buttons and input, minimum value is 1000)
+- [x] the possibility to add/remove ticker from watching group (profitable, unprofitable)
 - [x] any additional functionality that might be useful
 
   The following has been added:
-   - [x] sorting by ticker and price
+   - [x] sorting (by ticker and price)
    - [x] modal to read info about the ticker
-   - [x] search by ticker and description
+   - [x] search (by ticker and description)
+   - [x] pages (in addition to tickers and info there are also home and error pages)
 
 Technologies for use:
-- [x] React (preferable with hooks)
+- [x] React (preferable with hooks) (* react-router-dom added too )
 - [x] Redux (with Redux-Thunk or any other Redux middleware you are familiar) or any other state-manager library you want (* Redux middleware will be added soon)
 - [x] Socket.io - to connect to the service
 - [x] any UI library you want, or you can use just pure CSS (* Bulma and SCSS were used)
-- [x] Testing Library (*@testing-library/react)
+- [x] Testing Library (* @testing-library/react)
 
   The following has been added:
    - [x] Typescript
    - [x] ESLint, Prettier
-   - [x] ```@uiball/loaders```
+   - [x] @uiball/loaders
+
+  Husky, Lint-staged are in process
 
 - [x] The app is responsive.
 
@@ -84,6 +87,8 @@ npm run test:client
 ![zero tickers](https://github.com/dipinchuk/tickers-test-task/blob/main/client/public/screenshots/zero-tickers.png)
 ### Sorted tickers (by price descending)
 ![sorted tickers](https://github.com/dipinchuk/tickers-test-task/blob/main/client/public/screenshots/sorted-tickers.png)
+### Watch group (new)
+![sorted tickers](https://github.com/dipinchuk/tickers-test-task/blob/main/client/public/screenshots/watch-group.png)
 ### Modal
 ![modal](https://github.com/dipinchuk/tickers-test-task/blob/main/client/public/screenshots/modal.png)
 ### All search results
