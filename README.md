@@ -19,7 +19,7 @@ As a bonus some additional functionality can be implemented (please describe imp
 - [x] any additional visual effects to highlight positive or negative changes in the prices (* the price difference is displayed; green is greater than 0, red is less than 0)
 - [x] the possibility to switch on/off tickers by user (* opportunities to toggle all tickers together or one by one)
 - [x] the possibility to specify interval time by user (* by buttons and input, minimum value is 1000)
-- [x] the possibility to add/remove ticker from watching group (profitable, unprofitable)
+- [x] the possibility to add/remove ticker from watching group (* profitable, unprofitable)
 - [x] any additional functionality that might be useful
 
   The following has been added:
