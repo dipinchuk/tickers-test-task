@@ -1,0 +1,15 @@
+.ticker-icon {
+  object-fit: contain;
+  filter: grayscale(100%) brightness(70%);
+  transition: filter 0.3s;
+
+  max-width: 100px;
+  max-height: 100px;
+  min-width: 50px;
+  min-height: 50px;
+  padding: 10px 5px;
+}
+
+.ticker-icon.selected {
+  filter: none;
+}

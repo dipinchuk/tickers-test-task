@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "scripts": {
+    "start-app:client": "cd client && npm i && npm start",
+    "start-app:server": "cd server &&  npm i && npm start",
+    "start:client": "cd client && npm start",
+    "start:server": "cd server && npm start",
+    "test:client": "cd client && npm run test",
+    "format": "prettier --write './**/*.{ts,tsx,js,jsx,json}'"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "prettier": "^3.0.3"
+  },
+  "dependencies": {}
+}

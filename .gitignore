@@ -1,0 +1,12 @@
+# Ignore directories and files created by Visual Studio
+.vscode/
+.vs/
+
+# Ignore Node.js dependencies
+node_modules/
+
+# Ignore files with sensitive data
+.env
+
+
+
