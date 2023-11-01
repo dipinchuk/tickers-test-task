@@ -1,56 +1,97 @@
 
-# React Test Task
+## Description
+
+Test project for the Front-End Developer position at Incode Group.
+
+**App and tests screenshots are provided below.**
 
 ## Requirements
 
-We need you to implement a solution to display price tickers data on the UI in realtime.
+To implement a solution to display price tickers data on the UI in realtime. Some ideas how the application may look like can be seen on the [Google Finance](https://www.google.com/finance/) page.
 
 Price data is available from a locally running service (see information below). Any additional visualisations to indicate how prices have changed would be a plus. Testing is also an important part to this exercise.
 
 Requirements:
-- application should connect to the locally running service
-- application should render price changes for some tickers in real time
+- [x] application should connect to the locally running service
+- [x] application should render price changes for some tickers in real time
 
-You can get some ideas how your application may look like on the [Google Finance](https://www.google.com/finance/) page.
+As a bonus some additional functionality can be implemented (please describe implemented bonus functionality in this file):
+- [x] any additional visual effects to highlight positive or negative changes in the prices
+- [ ] the possibility to switch on/off tickers by user
+- [x] the possibility to specify interval time by user
+- [x] the possibility to add/remove ticker from watching group
+- [x] any additional functionality that might be useful
 
-As a bonus you can implement (please describe implemented bonus functionality in this file):
-- any additional visual effects to highlight positive or negative changes in the prices
-- the possibility to switch on/off tickers by user
-- the possibility to specify interval time by user
-- the possibility to add/remove ticker from watching group
-- any additional functionality you consider useful
+  The following has been added:
+   - [x] sorting by ticker or price
+   - [x] modal to read info about the ticker
+   - [x] search by ticker and description
 
 You should use the next technologies:
-- React (preferable with hooks)
-- Redux (with Redux-Thunk or any other Redux middleware you are familiar) or any other state-manager library you want
-- Socket.io - to connect to the service
-- any UI library you want, or you can use just pure CSS
-- Testing Library
+- [x] React (preferable with hooks)
+- [x] Redux (with Redux-Thunk or any other Redux middleware you are familiar) or any other state-manager library you want (* Redux middleware will be added soon)
+- [x] Socket.io - to connect to the service
+- [x] any UI library you want, or you can use just pure CSS (* Bulma and SCSS were used)
+- [x] Testing Library 
 
-We will assess the next parts:
+The next parts will be assessed:
 - workability: how your application works
 - projects structure: how you structure your files
 - code quality: how you write clean, readable code (feel free to install and use ESLint and Prettier)
 - knowledge React and its ecosystem: how you compose and use libraries together
 - testing: how you can test your code
 
-## Running the local service
-1. Open a new bash shell
-2. ```cd server```
-3. ```npm install``` or ```yarn install```
-4. ```npm run start``` or ```yarn start```
-5. You can visit [http://localhost:4000](http://localhost:4000) to check that the service is working correctly and inspect the data it produces.
+## Installation
 
-## Run your application
-1. Open a new bash shell
-2. ```cd client```
-3. ```npm install``` or ```yarn install```
-4. ```npm run start``` or ```yarn start```
+1. Clone this repository.
+```
+git clone https://github.com/dipinchuk/tickers-test-task.git
+```
+2. Enter the folder. 
+```
+cd tickers-test-task/
+```
+3. Install all necessary dependencies and run localhost.
+ - Server:
+```
+npm run start-app:server
+```
+- Client:
+```
+npm run start-app:client
+```
 
 ## Run the tests
-1. Open a new bash shell
-2. ```cd client```
-3. ```npm run test``` or ```yarn test```
+1. When the application is running enter the following command:
+```
+npm run test:client
+```
+# App screenshots
+### Home
+![home](https://github.com/dipinchuk/tickers-test-task/blob/main/client/public/screenshots/home.png)
+### All tickers
+![all tickers](https://github.com/dipinchuk/tickers-test-task/blob/main/client/public/screenshots/all-tickers.png)
+### One ticker
+![one ticker](https://github.com/dipinchuk/tickers-test-task/blob/main/client/public/screenshots/one-ticker.png)
+### Zero tickers
+![zero tickers](https://github.com/dipinchuk/tickers-test-task/blob/main/client/public/screenshots/zero-tickers.png)
+### Sorted tickers (by price descending)
+![sorted tickers](https://github.com/dipinchuk/tickers-test-task/blob/main/client/public/screenshots/sorted-tickers.png)
+### All search results
+![](https://github.com/dipinchuk/tickers-test-task/blob/main/client/public/screenshots/all-search-results.png)
+### Ticker search result
+![ticker search result](https://github.com/dipinchuk/tickers-test-task/blob/main/client/public/screenshots/ticker-search-results.png)
+### Zero search results
+![zero search results](https://github.com/dipinchuk/tickers-test-task/blob/main/client/public/screenshots/zero-search-results.png)
+### Modal
+![modal](https://github.com/dipinchuk/tickers-test-task/blob/main/client/public/screenshots/modal.png)
+### Not found
+![not found](https://github.com/dipinchuk/tickers-test-task/blob/main/client/public/screenshots/not-found.png)
+### Loader
+![loader](https://github.com/dipinchuk/tickers-test-task/blob/main/client/public/screenshots/loader.png)
+
+# Test screenshot
+![test](https://github.com/dipinchuk/tickers-test-task/blob/main/client/public/screenshots/test.png)
 
 # Price Service Usage
 
@@ -80,7 +121,7 @@ Price tickers are real-time via web-sockets.
 ]
 ```
 
-The tickers we use:
+Used tickers:
 - **AAPL** - Apple
 - **GOOGL** - Alphabet
 - **MSFT** - Microsoft
@@ -88,9 +129,3 @@ The tickers we use:
 - **FB** - Facebook
 - **TSLA** - Tesla
 
-## How to complete the task
-1. Clone or fork this repository
-2. Modify content of the folder `client`
-3. Modify content of the folder `server` - if you want to complete bonus tasks
-4. Commit and push your code to your repository
-5. Send us link to your repository
